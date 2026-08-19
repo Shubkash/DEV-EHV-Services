@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#211d1a">
-<title>DEV EHV SERVICES — High Voltage. Precisely Delivered.</title>
+<title>DEV EHV SERVICES — Very-High Voltage. Precisely Delivered.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
@@ -457,6 +457,115 @@ footer .footer-row{
   .footer-brand{text-align:center}
   .footer-brand img{margin:auto;width:145px}
 }
+/* ===== HERO TITLE BALANCE FIX ===== */
+
+@media (min-width: 901px){
+
+  .hero-content{
+    grid-template-columns:minmax(0, 1.08fr) minmax(330px, .92fr);
+    gap:76px;
+    align-items:center;
+    padding:78px 0 72px;
+    min-height:690px;
+  }
+
+  .hero-title{
+    font-size:clamp(58px, 6.35vw, 102px);
+    line-height:.87;
+    letter-spacing:-.068em;
+    margin:26px 0 32px;
+    max-width:760px;
+    text-wrap:initial;
+  }
+
+  .hero-title span,
+  .hero-title em{
+    display:block;
+  }
+
+  .hero-title span{
+    white-space:nowrap;
+  }
+
+  .hero-title em{
+    margin:5px 0 3px;
+    font-size:.88em;
+    line-height:.95;
+  }
+
+  .hero-aside{
+    padding-left:50px;
+    padding-bottom:0;
+    align-self:center;
+  }
+
+  .hero-stat{
+    padding:25px 0;
+  }
+
+  .hero-stat:first-child{
+    padding-top:0;
+  }
+
+  .hero-stat:last-child{
+    padding-bottom:0;
+  }
+
+  .hero-stat b{
+    font-size:44px;
+  }
+}
+
+
+/* Tablet */
+
+@media (max-width:900px){
+
+  .hero-title{
+    font-size:clamp(58px, 11vw, 86px);
+    line-height:.9;
+    letter-spacing:-.065em;
+  }
+
+  .hero-title span,
+  .hero-title em{
+    display:block;
+  }
+
+  .hero-title em{
+    margin:6px 0 4px;
+  }
+
+  .hero-content{
+    gap:52px;
+  }
+
+  .hero-aside{
+    padding-top:28px;
+  }
+}
+
+
+/* Mobile */
+
+@media (max-width:560px){
+
+  .hero-title{
+    font-size:clamp(52px, 15vw, 70px);
+    line-height:.9;
+    letter-spacing:-.06em;
+    margin:22px 0 28px;
+  }
+
+  .hero-title em{
+    font-size:.9em;
+  }
+
+  .hero-copy{
+    font-size:14px;
+    line-height:1.75;
+  }
+}
 
 </style>
 </head>
@@ -486,7 +595,12 @@ footer .footer-row{
     <div class="hero-content">
       <div class="reveal">
         <div class="kicker">Established expertise · 1.1 kV — 220 kV</div>
-        <h1>Very-High voltage.<br><em>Precisely</em><br>Delivered.</h1>
+        <h1 class="hero-title">
+  <span>Very-High</span>
+  <span>Voltage.</span>
+  <em>Precisely</em>
+  <span>Delivered.</span>
+</h1>
         <p class="hero-copy">DEV EHV Services brings specialised experience in cable systems, jointing, terminations and high-voltage infrastructure—combining disciplined execution with field-proven expertise.</p>
         <div class="hero-actions"><a href="#projects" class="btn btn-primary">Explore our work ↗</a><a href="#about" class="btn btn-secondary">Discover DEV EHV ↓</a></div>
       </div>
