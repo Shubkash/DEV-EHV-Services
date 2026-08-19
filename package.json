@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "dev": "node --watch server.js"
+    "dev": "node --watch server.js",
+    "check": "node --check server.js && node --check scripts/hash-password.js",
+    "test": "node --test",
+    "hash-password": "node scripts/hash-password.js"
   },
   "dependencies": {
     "dotenv": "^16.6.1",

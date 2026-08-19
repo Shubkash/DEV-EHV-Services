@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: dev-ehv-services
+    runtime: node
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeploy: true
