@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#211d1a">
+<title>DEV EHV SERVICES — High Voltage. Precisely Delivered.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#211d1a; --ink-2:#2d2723; --paper:#f5f1e9; --paper-2:#e9e2d8;
+  --white:#fffdf8; --muted:#817a72; --line:rgba(255,250,242,.14);
+  --line-dark:rgba(45,39,35,.13); --copper:#a96843; --copper-2:#d69a70;
+  --max:1280px; --serif:"Playfair Display",Georgia,serif;
+  --sans:"Manrope",Arial,sans-serif; --mono:"DM Mono",monospace;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55}
+a{text-decoration:none;color:inherit} img{max-width:100%;display:block}
+.shell{max-width:var(--max);margin:auto;padding:0 36px}
+.nav{height:86px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:20}
+.logo{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.04em;font-size:17px}
+.logo-mark{width:34px;height:34px;border:1px solid var(--copper);display:grid;place-items:center;transform:rotate(45deg)}
+.logo-mark span{width:9px;height:9px;background:var(--copper)}
+.logo small{display:block;font-family:var(--mono);font-weight:400;font-size:8px;letter-spacing:.13em;color:#aaa097;margin-top:3px}
+.nav-links{display:flex;gap:28px;font-size:12px;font-weight:700;color:#5c646c}
+.nav-links a:hover{color:var(--copper)}
+.nav-cta{border:1px solid var(--line-dark);padding:11px 16px;font-size:11px;font-weight:800;border-radius:999px;transition:.25s}
+.nav-cta:hover{background:var(--ink);color:white}
+.hero{background:linear-gradient(135deg,#211d1a 0%,#28221e 55%,#1b1714 100%);color:#fffaf3;position:relative;overflow:hidden;min-height:760px}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 82% 28%,rgba(169,104,67,.24),transparent 28%),linear-gradient(120deg,transparent 35%,rgba(255,255,255,.025));pointer-events:none}
+.hero .nav{border-bottom:1px solid var(--line)}
+.hero .logo{color:white}.hero .nav-links{color:#b1a79e}.hero .nav-cta{border-color:rgba(255,255,255,.25)}
+.hero-content{padding:88px 0 70px;display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:end;min-height:670px}
+.kicker{font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--copper-2);text-transform:uppercase;display:flex;align-items:center;gap:12px}
+.kicker:before{content:"";height:1px;width:34px;background:currentColor}
+h1{font-size:clamp(56px,7vw,108px);line-height:.95;letter-spacing:-.07em;margin:24px 0 30px;font-weight:800}
+h1 em{font-family:var(--serif);font-weight:500;color:var(--copper-2)}
+.hero-copy{font-size:16px;line-height:1.8;color:#c7beb5;max-width:560px}
+.hero-actions{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+.btn{padding:15px 20px;border-radius:999px;font-size:12px;font-weight:800;display:inline-flex;align-items:center;gap:10px}
+.btn-primary{background:var(--copper);color:#fff}
+.btn-secondary{border:1px solid var(--line);color:white}
+.hero-aside{border-left:1px solid var(--line);padding-left:44px;padding-bottom:8px}
+.hero-stat{padding:20px 0;border-bottom:1px solid var(--line)}
+.hero-stat:first-child{padding-top:0}.hero-stat:last-child{border:0}
+.hero-stat b{font-size:42px;letter-spacing:-.06em;display:block;color:white}
+.hero-stat span{font-family:var(--mono);font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:#a59a91}
+.hero-bottom{border-top:1px solid var(--line);padding:18px 0;display:flex;justify-content:space-between;color:#a59a91;font-family:var(--mono);font-size:9px;letter-spacing:.11em;text-transform:uppercase}
+.band{background:var(--copper);color:#fff;padding:18px 0;overflow:hidden}
+.marquee{display:flex;gap:60px;white-space:nowrap;font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;animation:slide 24s linear infinite}
+@keyframes slide{to{transform:translateX(-25%)}}
+section{padding:130px 0}
+.section-label{font-family:var(--mono);font-size:10px;letter-spacing:.17em;color:var(--copper);text-transform:uppercase;margin-bottom:22px}
+.split-head{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:end;margin-bottom:60px}
+h2{font-size:clamp(38px,5vw,70px);line-height:1;letter-spacing:-.06em;margin:0;font-weight:800}
+.split-head p{font-size:16px;line-height:1.8;color:#756e67;max-width:520px;margin:0}
+.intro-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px}
+.intro-big{font-family:var(--serif);font-size:clamp(30px,3.5vw,52px);line-height:1.2}
+.intro-big strong{font-family:var(--sans);font-weight:800;color:var(--copper)}
+.cap-list{border-top:1px solid var(--line-dark)}
+.cap-item{display:grid;grid-template-columns:60px 1fr auto;gap:20px;padding:24px 0;border-bottom:1px solid var(--line-dark);align-items:center}
+.cap-item .n{font-family:var(--mono);font-size:10px;color:var(--copper)}
+.cap-item h3{margin:0;font-size:18px;letter-spacing:-.03em}
+.cap-item span{font-size:12px;color:var(--muted)}
+.dark{background:linear-gradient(135deg,#211d1a,#181411);color:#fffaf3}
+.dark h2{color:white}.dark .split-head p{color:#b7ada4}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.metric{padding:38px 30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-height:210px;display:flex;flex-direction:column;justify-content:space-between}
+.metric b{font-size:54px;letter-spacing:-.07em}.metric span{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:#b8aea5;text-transform:uppercase}
+.metric i{font-style:normal;color:var(--copper-2)}
+.projects{background:var(--paper-2)}
+.project-feature{background:linear-gradient(135deg,#211d1a,#2a231f);color:#fffaf3;border-radius:2px;padding:55px;min-height:520px;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;position:relative;overflow:hidden}
+.project-feature:after{content:"220 kV";position:absolute;right:-20px;bottom:-55px;font-size:180px;font-weight:800;letter-spacing:-.1em;color:rgba(255,255,255,.035);pointer-events:none}
+.project-tag{font-family:var(--mono);font-size:10px;color:var(--copper-2);letter-spacing:.15em;text-transform:uppercase}
+.project-feature h3{font-size:clamp(35px,4vw,62px);line-height:1.02;letter-spacing:-.06em;margin:25px 0}
+.project-feature p{color:#c4bab1;max-width:600px}
+.project-meta{align-self:end;border-left:1px solid var(--line);padding-left:34px;position:relative;z-index:1}
+.project-meta div{padding:16px 0;border-bottom:1px solid var(--line)}
+.project-meta b{display:block;font-size:10px;font-family:var(--mono);letter-spacing:.12em;color:#a79c93;text-transform:uppercase;margin-bottom:4px}
+.project-meta span{font-size:15px}
+.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-dark);margin-top:1px}
+.project-card{background:var(--white);padding:34px;min-height:290px;display:flex;flex-direction:column;justify-content:space-between;transition:.3s}
+.project-card:hover{background:#fff;transform:translateY(-5px);box-shadow:0 20px 45px rgba(45,39,35,.09)}
+.project-card .code{font-family:var(--mono);font-size:10px;color:var(--copper)}
+.project-card h3{font-size:25px;line-height:1.1;letter-spacing:-.04em;margin:20px 0}
+.project-card p{font-size:13px;color:var(--muted)}
+.journey{display:grid;grid-template-columns:.55fr 1.45fr;gap:60px}
+.journey-sticky{position:sticky;top:110px;height:max-content}
+.timeline{border-left:1px solid var(--line-dark)}
+.timeline-item{padding:0 0 55px 42px;position:relative}
+.timeline-item:before{content:"";position:absolute;width:11px;height:11px;border-radius:50%;background:var(--paper);border:2px solid var(--copper);left:-6px;top:7px}
+.timeline-item:last-child{padding-bottom:0}
+.timeline-item .year{font-family:var(--mono);font-size:10px;color:var(--copper);letter-spacing:.13em}
+.timeline-item h3{font-size:26px;letter-spacing:-.04em;margin:8px 0}.timeline-item p{color:var(--muted);max-width:650px}
+.clients{padding:40px 0 0;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-dark);border-left:1px solid var(--line-dark)}
+.client{padding:30px;border-right:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);font-size:16px;font-weight:700;letter-spacing:-.03em;color:#706861}
+.client:hover{color:var(--ink);background:var(--white)}
+.contact-wrap{background:linear-gradient(135deg,#211d1a,#29231f);color:#fffaf3;padding:80px;border-radius:2px;display:grid;grid-template-columns:1fr .85fr;gap:70px}
+.contact-wrap h2{color:white}.contact-wrap p{color:#aab4bc;max-width:560px}
+.contact-links{margin-top:34px;border-top:1px solid var(--line)}
+.contact-link{padding:18px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;font-size:15px}
+.contact-link small{font-family:var(--mono);font-size:9px;color:#76818b;letter-spacing:.12em;text-transform:uppercase}
+.form{background:#2d2723;padding:32px}
+.form label{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:#a79c93;margin:0 0 7px;text-transform:uppercase}
+.form input,.form textarea{width:100%;padding:13px 0;background:transparent;border:0;border-bottom:1px solid var(--line);color:white;font-family:var(--sans);outline:none;margin-bottom:22px}.form textarea{resize:vertical;min-height:90px}
+.form button{width:100%;border:0;cursor:pointer}
+footer{background:#171310;color:#91877e;padding:28px 0;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase}
+.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(22px);transition:.8s cubic-bezier(.2,.7,.2,1)}.reveal.show{opacity:1;transform:none}
+@media(max-width:900px){
+ .shell{padding:0 22px}.nav-links{display:none}.hero-content,.intro-grid,.split-head,.project-feature,.contact-wrap,.journey{grid-template-columns:1fr}.hero{min-height:auto}.hero-content{padding:70px 0}.hero-aside{border-left:0;border-top:1px solid var(--line);padding:20px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.hero-stat{padding:10px 0;border:0}.metrics{grid-template-columns:repeat(2,1fr)}.project-grid{grid-template-columns:1fr}.clients{grid-template-columns:repeat(2,1fr)}.project-feature{padding:35px}.project-meta{border-left:0;border-top:1px solid var(--line);padding:20px 0 0}.contact-wrap{padding:40px}.journey-sticky{position:static}
+}
+@media(max-width:560px){section{padding:85px 0}.hero-bottom{display:none}h1{font-size:56px}.hero-aside{grid-template-columns:1fr 1fr}.metrics{grid-template-columns:1fr}.clients{grid-template-columns:1fr}.contact-wrap{padding:30px 22px}.btn{width:100%;justify-content:center}.split-head{margin-bottom:40px}}
+
+/* Warm premium palette refinement */
+.hero h1, .dark h2, .contact-wrap h2 { color:#fffaf3; }
+.hero .nav-cta:hover { background:#fffaf3; color:#211d1a; }
+.btn-primary { background:linear-gradient(135deg,#a96843,#c88259); }
+.project-feature:after { color:rgba(255,244,232,.035); }
+.form { background:rgba(255,250,242,.045); }
+.form input::placeholder,.form textarea::placeholder{color:#877d74;}
+.clients .client{background:rgba(255,253,248,.25);}
+
+/* ===== PREMIUM MOTION SYSTEM ===== */
+html { overflow-x:hidden; }
+body { cursor:default; }
+#preloader{
+  position:fixed; inset:0; z-index:9999; display:grid; place-items:center;
+  background:#211d1a; color:#fffaf3; transition:opacity .7s ease,visibility .7s ease;
+}
+#preloader.hide{opacity:0;visibility:hidden}
+.loader-inner{text-align:center}
+.loader-mark{width:46px;height:46px;margin:0 auto 18px;border:1px solid #a96843;transform:rotate(45deg);display:grid;place-items:center;animation:loaderSpin 2.8s cubic-bezier(.2,.7,.2,1) infinite}
+.loader-mark:after{content:"";width:11px;height:11px;background:#d69a70}
+.loader-text{font-family:var(--mono);font-size:9px;letter-spacing:.22em;color:#c8bbb0;text-transform:uppercase}
+@keyframes loaderSpin{0%,100%{transform:rotate(45deg) scale(1)}50%{transform:rotate(225deg) scale(1.08)}}
+
+.hero:after{
+ content:""; position:absolute; width:560px; height:560px; border-radius:50%;
+ border:1px solid rgba(214,154,112,.08); right:-230px; top:110px;
+ box-shadow:0 0 0 80px rgba(214,154,112,.018),0 0 0 160px rgba(214,154,112,.012);
+ animation:orbFloat 12s ease-in-out infinite; pointer-events:none;
+}
+@keyframes orbFloat{50%{transform:translate(-28px,24px) scale(1.04)}}
+
+.hero-content{position:relative;z-index:2}
+.hero .kicker{animation:heroUp .8s .2s both}
+.hero h1{animation:heroUp 1s .38s cubic-bezier(.16,1,.3,1) both}
+.hero-copy{animation:heroUp .9s .58s cubic-bezier(.16,1,.3,1) both}
+.hero-actions{animation:heroUp .9s .75s cubic-bezier(.16,1,.3,1) both}
+.hero-aside{animation:heroIn 1.2s .55s cubic-bezier(.16,1,.3,1) both}
+@keyframes heroUp{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
+@keyframes heroIn{from{opacity:0;transform:translateX(35px)}to{opacity:1;transform:none}}
+
+.hero-stat{transition:transform .35s ease,background .35s ease}
+.hero-stat:hover{transform:translateX(7px);background:rgba(255,250,243,.035)}
+
+.btn{position:relative;overflow:hidden;isolation:isolate;transition:transform .25s ease,box-shadow .25s ease}
+.btn:before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 25%,rgba(255,255,255,.28) 47%,transparent 69%);transform:translateX(-120%);transition:transform .75s ease;z-index:-1}
+.btn:hover:before{transform:translateX(120%)}
+.btn:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(0,0,0,.15)}
+
+.project-card,.client,.metric,.cap-item{transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s ease,background .45s ease,border-color .45s ease}
+.metric:hover{transform:translateY(-7px);background:rgba(255,250,243,.035)}
+.cap-item:hover{transform:translateX(10px)}
+.cap-item:hover h3{color:var(--copper)}
+.project-card:hover{transform:translateY(-10px) rotateX(2deg)}
+.client:hover{transform:translateY(-3px)}
+
+.project-feature{transition:transform .7s cubic-bezier(.2,.7,.2,1),box-shadow .7s ease}
+.project-feature:hover{transform:translateY(-5px);box-shadow:0 35px 80px rgba(33,29,26,.2)}
+
+.timeline-item:before{box-shadow:0 0 0 0 rgba(169,104,67,.25);transition:box-shadow .45s ease,background .45s ease}
+.timeline-item:hover:before{background:var(--copper);box-shadow:0 0 0 9px rgba(169,104,67,.12)}
+
+.section-label{position:relative;display:inline-flex;align-items:center;gap:10px}
+.section-label:after{content:"";height:1px;width:0;background:var(--copper);transition:width .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.show .section-label:after{width:34px}
+
+.metric b{transition:transform .4s ease,color .4s ease}
+.metric:hover b{transform:scale(1.04);color:#fffaf3}
+
+.marquee{will-change:transform}
+.band:hover .marquee{animation-play-state:paused}
+
+/* richer copper light */
+.glow-line{
+ position:absolute;left:0;right:0;bottom:0;height:1px;overflow:hidden;z-index:4;
+ background:rgba(255,255,255,.06)
+}
+.glow-line:after{
+ content:"";position:absolute;width:25%;height:100%;left:-25%;
+ background:linear-gradient(90deg,transparent,var(--copper-2),transparent);
+ animation:lineTravel 4s ease-in-out infinite
+}
+@keyframes lineTravel{to{left:110%}}
+
+.nav{transition:background .35s ease,backdrop-filter .35s ease}
+.nav.scrolled{background:rgba(33,29,26,.78);backdrop-filter:blur(16px);margin:0 -36px;padding:0 36px}
+.hero .nav.scrolled{border-bottom-color:rgba(255,250,243,.08)}
+
+.reveal{transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.reveal:nth-child(2){transition-delay:.08s}
+.reveal:nth-child(3){transition-delay:.16s}
+
+@media (prefers-reduced-motion:reduce){
+ *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+
+
+/* ===== SIGNATURE CINEMATIC UPGRADE ===== */
+:root{
+  --cream:#fffaf3;
+  --glass:rgba(255,250,243,.055);
+}
+body{background:
+  radial-gradient(circle at 15% 12%,rgba(169,104,67,.045),transparent 24%),
+  var(--paper);}
+::selection{background:var(--copper);color:var(--cream)}
+.cursor-glow{
+  position:fixed;width:360px;height:360px;border-radius:50%;pointer-events:none;z-index:0;
+  background:radial-gradient(circle,rgba(169,104,67,.09),rgba(169,104,67,.025) 35%,transparent 70%);
+  transform:translate(-50%,-50%);mix-blend-mode:multiply;opacity:0;transition:opacity .35s ease;
+}
+body:hover .cursor-glow{opacity:1}
+.hero .cursor-glow{mix-blend-mode:screen}
+
+.hero{
+  isolation:isolate;
+}
+.hero:before{
+  background:
+   radial-gradient(circle at 80% 25%,rgba(214,154,112,.16),transparent 25%),
+   radial-gradient(circle at 18% 90%,rgba(214,154,112,.05),transparent 24%),
+   linear-gradient(120deg,transparent 35%,rgba(255,255,255,.018));
+}
+.hero .hero-content:after{
+  content:"";position:absolute;right:2%;top:2%;width:min(42vw,500px);aspect-ratio:1;
+  border:1px solid rgba(214,154,112,.14);border-radius:50%;
+  background:
+    linear-gradient(90deg,transparent 49.8%,rgba(214,154,112,.08) 50%,transparent 50.2%),
+    linear-gradient(transparent 49.8%,rgba(214,154,112,.08) 50%,transparent 50.2%);
+  pointer-events:none;z-index:-1;
+  animation:slowRotate 34s linear infinite;
+}
+.hero .hero-content:before{
+  content:"EHV";position:absolute;right:6%;bottom:0;font-size:clamp(150px,23vw,370px);
+  font-weight:800;letter-spacing:-.11em;color:rgba(255,250,243,.018);z-index:-1;
+  animation:ghostBreath 8s ease-in-out infinite;
+}
+@keyframes slowRotate{to{transform:rotate(360deg)}}
+@keyframes ghostBreath{50%{transform:translateY(-12px);opacity:.7}}
+
+h1{
+  text-wrap:balance;
+}
+.hero h1 em{position:relative;display:inline-block}
+.hero h1 em:after{
+  content:"";position:absolute;left:4%;right:4%;bottom:-9px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--copper-2),transparent);
+  transform-origin:left;animation:underlineGrow 1.5s 1.1s cubic-bezier(.16,1,.3,1) both;
+}
+@keyframes underlineGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+section{position:relative}
+section:has(.split-head):before{
+  content:"";position:absolute;left:0;top:0;width:100%;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(45,39,35,.08),transparent);
+}
+
+.split-head h2{max-width:760px}
+.split-head{position:relative}
+.split-head:after{
+  content:"";position:absolute;right:0;bottom:-28px;width:80px;height:1px;
+  background:linear-gradient(90deg,var(--copper),transparent);
+}
+
+.intro-big{
+  position:relative;padding-left:26px;
+}
+.intro-big:before{
+  content:"";position:absolute;left:0;top:.18em;bottom:.18em;width:2px;
+  background:linear-gradient(var(--copper),transparent);
+}
+
+.cap-item{position:relative;overflow:hidden}
+.cap-item:after{
+  content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--copper);
+  transition:width .7s cubic-bezier(.2,.7,.2,1);
+}
+.cap-item:hover:after{width:100%}
+.cap-item:hover .n{letter-spacing:.2em}
+
+.dark{
+  background:
+    radial-gradient(circle at 90% 10%,rgba(169,104,67,.08),transparent 25%),
+    linear-gradient(135deg,#211d1a,#181411);
+}
+.dark:after{
+  content:"";position:absolute;right:-18%;top:10%;width:55vw;height:55vw;border-radius:50%;
+  border:1px solid rgba(255,250,243,.035);pointer-events:none;
+}
+
+.metrics{position:relative;overflow:hidden}
+.metric{position:relative}
+.metric:after{
+  content:"";position:absolute;width:140px;height:140px;border-radius:50%;
+  right:-80px;bottom:-80px;border:1px solid rgba(214,154,112,.14);
+  transition:transform .7s ease;
+}
+.metric:hover:after{transform:scale(1.8)}
+.metric span{position:relative;z-index:1}
+.metric b{position:relative;z-index:1}
+
+.projects:before{
+  content:"SELECTED / WORK";position:absolute;left:3%;top:70px;
+  writing-mode:vertical-rl;font-family:var(--mono);font-size:9px;letter-spacing:.3em;
+  color:rgba(45,39,35,.16);
+}
+.project-feature{
+  background:
+   radial-gradient(circle at 88% 22%,rgba(214,154,112,.12),transparent 25%),
+   linear-gradient(135deg,#211d1a,#2a231f);
+}
+.project-feature:before{
+  content:"";position:absolute;left:0;top:0;width:100%;height:2px;
+  background:linear-gradient(90deg,transparent,var(--copper),transparent);
+  animation:featureScan 5s ease-in-out infinite;
+}
+@keyframes featureScan{0%,100%{transform:translateX(-30%)}50%{transform:translateX(30%)}}
+
+.project-card{
+  position:relative;overflow:hidden;
+}
+.project-card:before{
+  content:"↗";position:absolute;right:25px;top:22px;width:34px;height:34px;border-radius:50%;
+  border:1px solid var(--line-dark);display:grid;place-items:center;
+  opacity:0;transform:translate(-8px,8px);transition:.4s cubic-bezier(.2,.7,.2,1);
+}
+.project-card:hover:before{opacity:1;transform:none}
+.project-card:after{
+  content:"";position:absolute;inset:auto -30% -80% auto;width:220px;height:220px;border-radius:50%;
+  background:radial-gradient(circle,rgba(169,104,67,.11),transparent 65%);
+  transition:transform .7s ease;
+}
+.project-card:hover:after{transform:scale(1.45)}
+
+.timeline{
+  position:relative;
+}
+.timeline:before{
+  content:"";position:absolute;left:-1px;top:0;width:1px;height:100%;
+  background:linear-gradient(transparent,var(--copper),transparent);
+  transform-origin:top;transform:scaleY(0);
+}
+.timeline.show-line:before{animation:drawLine 1.8s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes drawLine{to{transform:scaleY(1)}}
+.timeline-item h3{transition:transform .4s ease,color .4s ease}
+.timeline-item:hover h3{transform:translateX(8px);color:var(--copper)}
+
+.clients{overflow:hidden}
+.client{position:relative}
+.client:after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--copper);
+  transform:scaleX(0);transform-origin:left;transition:transform .5s ease;
+}
+.client:hover:after{transform:scaleX(1)}
+
+.contact-wrap{
+  position:relative;overflow:hidden;
+}
+.contact-wrap:before{
+  content:"";position:absolute;width:500px;height:500px;border-radius:50%;right:-250px;top:-250px;
+  border:1px solid rgba(214,154,112,.12);box-shadow:0 0 0 80px rgba(214,154,112,.025),0 0 0 160px rgba(214,154,112,.015);
+  animation:contactFloat 12s ease-in-out infinite;
+}
+@keyframes contactFloat{50%{transform:translate(-22px,25px)}}
+.form{position:relative;z-index:1;border:1px solid rgba(255,250,243,.05);border-radius:3px}
+.form input,.form textarea{transition:border-color .3s ease,background .3s ease}
+.form input:focus,.form textarea:focus{
+  border-bottom-color:var(--copper);background:rgba(255,250,243,.02);
+}
+
+footer{position:relative;overflow:hidden}
+footer:before{
+  content:"DEV EHV";position:absolute;left:50%;top:50%;transform:translate(-50%,-42%);
+  font-size:clamp(70px,16vw,220px);font-weight:800;letter-spacing:-.09em;color:rgba(255,250,243,.018);
+  white-space:nowrap;pointer-events:none;
+}
+
+/* cinematic reveal variants */
+.reveal-left{opacity:0;transform:translateX(-45px);transition:1s cubic-bezier(.16,1,.3,1)}
+.reveal-right{opacity:0;transform:translateX(45px);transition:1s cubic-bezier(.16,1,.3,1)}
+.reveal-scale{opacity:0;transform:scale(.96);transition:1s cubic-bezier(.16,1,.3,1)}
+.reveal-left.show,.reveal-right.show,.reveal-scale.show{opacity:1;transform:none}
+
+/* smooth anchor motion */
+@media (min-width:901px){
+  .hero-content{min-height:690px}
+  .project-card{min-height:310px}
+}
+@media(max-width:900px){
+  .cursor-glow{display:none}
+  .projects:before{display:none}
+  .hero .hero-content:after{width:65vw;right:-10%;top:10%}
+  .hero .hero-content:before{right:-2%}
+}
+
+
+/* ===== COMPANY LOGO INTEGRATION ===== */
+.company-logo{
+  gap:13px;
+  min-width:0;
+}
+.company-logo img{
+  width:148px;
+  height:auto;
+  max-height:58px;
+  object-fit:contain;
+  filter:drop-shadow(0 4px 12px rgba(0,0,0,.18));
+  transition:transform .35s cubic-bezier(.2,.7,.2,1),filter .35s ease;
+}
+.company-logo:hover img{
+  transform:translateY(-1px) scale(1.025);
+  filter:drop-shadow(0 7px 18px rgba(214,154,112,.18));
+}
+.brand-divider{
+  height:34px;width:1px;background:rgba(255,250,243,.22);
+}
+.brand-note{
+  font-family:var(--mono);
+  font-size:8px;
+  line-height:1.65;
+  letter-spacing:.14em;
+  color:#b8aaa0;
+  white-space:nowrap;
+}
+.footer-brand{
+  padding-top:10px;
+  padding-bottom:20px;
+}
+.footer-brand img{
+  width:155px;
+  height:auto;
+  filter:drop-shadow(0 5px 18px rgba(0,0,0,.18));
+}
+footer .footer-row{
+  border-top:1px solid rgba(255,250,243,.07);
+  padding-top:24px;
+}
+@media(max-width:700px){
+  .company-logo img{width:124px;max-height:50px}
+  .brand-note,.brand-divider{display:none}
+  .footer-brand{text-align:center}
+  .footer-brand img{margin:auto;width:145px}
+}
+
+</style>
+</head>
+<body>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<div id="preloader" aria-hidden="true">
+  <div class="loader-inner">
+    <div class="loader-mark"></div>
+    <div class="loader-text">DEV EHV SERVICES</div>
+  </div>
+</div>
+
+
+<section class="hero">
+  <div class="shell">
+    <nav class="nav">
+      <a class="logo company-logo" href="#" aria-label="DEV EHV Services home">
+  <img src="dev-ehv-logo-transparent.png" alt="DEV EHV Services logo">
+  <span class="brand-divider"></span>
+  <span class="brand-note">EXTRA HIGH VOLTAGE<br>CONTRACTING</span>
+</a>
+      <div class="nav-links"><a href="#about">About</a><a href="#expertise">Expertise</a><a href="#projects">Projects</a><a href="#journey">Experience</a><a href="#contact">Contact</a></div>
+      <a class="nav-cta" href="#contact">Start a conversation ↗</a>
+    </nav>
+
+    <div class="hero-content">
+      <div class="reveal">
+        <div class="kicker">Established expertise · 1.1 kV — 220 kV</div>
+        <h1>Very-High voltage.<br><em>Precisely</em><br>Delivered.</h1>
+        <p class="hero-copy">DEV EHV Services brings specialised experience in cable systems, jointing, terminations and high-voltage infrastructure—combining disciplined execution with field-proven expertise.</p>
+        <div class="hero-actions"><a href="#projects" class="btn btn-primary">Explore our work ↗</a><a href="#about" class="btn btn-secondary">Discover DEV EHV ↓</a></div>
+      </div>
+      <aside class="hero-aside reveal">
+        <div class="hero-stat"><b>22<i>+</i></b><span>Years of industry experience</span></div>
+        <div class="hero-stat"><b>220 <i>kV</i></b><span>High-voltage capability</span></div>
+        <div class="hero-stat"><b>35</b><span>Technical & administrative staff</span></div>
+      </aside>
+    </div>
+    <div class="hero-bottom"><span>DEV EHV SERVICES</span><span>India · Nepal · International Project Experience</span><span>24×7 Service Support</span></div>
+  </div>
+<div class="glow-line"></div>
+</section>
+
+<div class="band"><div class="marquee">EHV CABLE SYSTEMS ✦ JOINTING & TERMINATIONS ✦ GIS & OUTDOOR TERMINATIONS ✦ ROUTE SURVEY ✦ INSTALLATION & RESTORATION ✦ EHV CABLE SYSTEMS ✦ JOINTING & TERMINATIONS ✦ GIS & OUTDOOR TERMINATIONS ✦</div></div>
+
+<section id="about">
+<div class="shell">
+ <div class="split-head reveal"><div><div class="section-label">01 / The company</div><h2>Built around the details that matter.</h2></div><p>From planning and route surveys through installation, jointing, termination and restoration, DEV EHV Services supports demanding high-voltage projects with an experienced field team.</p></div>
+ <div class="intro-grid">
+  <div class="intro-big reveal-left">Power infrastructure is unforgiving. <strong>Every connection matters.</strong> Our work is shaped around disciplined procedures, specialised skills and practical site experience.</div>
+  <div class="cap-list reveal-right">
+   <div class="cap-item"><span class="n">01</span><h3>Cable Laying</h3><span>Planning → Installation</span></div>
+   <div class="cap-item"><span class="n">02</span><h3>Cable Jointing</h3><span>Specialised HV work</span></div>
+   <div class="cap-item"><span class="n">03</span><h3>Terminations</h3><span>Indoor · Outdoor · GIS</span></div>
+   <div class="cap-item"><span class="n">04</span><h3>Testing & Restoration</h3><span>Project completion support</span></div>
+  </div>
+ </div>
+</div>
+</section>
+
+<section class="dark" id="expertise">
+<div class="shell">
+ <div class="split-head reveal"><div><div class="section-label">02 / Capability</div><h2>Experience at the critical end of the network.</h2></div><p>Focused expertise across cable infrastructure and high-voltage installation work, supporting projects from 1.1 kV up to 220 kV.</p></div>
+ <div class="metrics reveal">
+  <div class="metric"><b>1.1–<i>220</i></b><span>kV operating experience</span></div>
+  <div class="metric"><b>30</b><span>Technical staff</span></div>
+  <div class="metric"><b>5</b><span>Administrative staff</span></div>
+  <div class="metric"><b>24×7</b><span>Service availability</span></div>
+ </div>
+</div>
+</section>
+
+<section class="projects" id="projects">
+<div class="shell">
+ <div class="split-head reveal"><div><div class="section-label">03 / Selected work</div><h2>A record built on complex projects.</h2></div><p>A selection of current and completed work drawn from the company's project experience across India and international assignments.</p></div>
+ <article class="project-feature reveal-scale">
+  <div><div class="project-tag">Featured project / High voltage infrastructure</div><h3>220 kV cable systems & critical terminations.</h3><p>DEV EHV Services has contributed specialised cable installation, jointing and termination work across major infrastructure and utility projects.</p></div>
+  <div class="project-meta">
+   <div><b>Project experience</b><span>Metro · Utility · Industrial Infrastructure</span></div>
+   <div><b>Voltage range</b><span>Up to 220 kV</span></div>
+   <div><b>Geographies</b><span>India, Nepal & international projects</span></div>
+  </div>
+ </article>
+ <div class="project-grid">
+  <article class="project-card reveal"><div class="code">PROJECT / 01</div><div><h3>Pune Metro</h3><p>132 kV cable joints and terminations.</p></div><div class="code">144 joints & terminations</div></article>
+  <article class="project-card reveal"><div class="code">PROJECT / 02</div><div><h3>HVPNL, Gurgaon</h3><p>High-voltage G&W termination work.</p></div><div class="code">105 / 220 kV terminations</div></article>
+  <article class="project-card reveal"><div class="code">PROJECT / 03</div><div><h3>Delhi Metro</h3><p>Cable laying and jointing for metro infrastructure.</p></div><div class="code">65 km cable scope</div></article>
+  <article class="project-card reveal"><div class="code">PROJECT / 04</div><div><h3>HMEL Bathinda Refinery</h3><p>Large-scale cable laying infrastructure work.</p></div><div class="code">110 km cable laid</div></article>
+  <article class="project-card reveal"><div class="code">PROJECT / 05</div><div><h3>NDMC GIS Network</h3><p>Specialised high-voltage infrastructure support in Delhi.</p></div><div class="code">GIS network work</div></article>
+  <article class="project-card reveal"><div class="code">PROJECT / 06</div><div><h3>Nepal Electricity Authority</h3><p>International project experience supporting power infrastructure.</p></div><div class="code">Butwal · Nepal</div></article>
+ </div>
+</div>
+</section>
+
+<section id="journey">
+<div class="shell journey">
+ <div class="journey-sticky reveal"><div class="section-label">04 / Experience</div><h2>More than a project list.</h2><p style="color:var(--muted);margin-top:22px">A body of experience developed across infrastructure environments where planning, precision and execution all matter.</p></div>
+ <div class="timeline reveal">
+  <div class="timeline-item reveal"><div class="year">FOUNDATION</div><h3>22+ years of industry experience</h3><p>Long-term involvement in cable and high-voltage infrastructure work forms the foundation of DEV EHV Services.</p></div>
+  <div class="timeline-item reveal"><div class="year">INFRASTRUCTURE</div><h3>Metro, utility & industrial projects</h3><p>Experience spans demanding infrastructure environments, including metro systems, utility networks and refinery-scale projects.</p></div>
+  <div class="timeline-item reveal"><div class="year">SPECIALISATION</div><h3>Jointing, termination & cable systems</h3><p>A specialised focus on the critical components and processes that connect high-voltage networks.</p></div>
+  <div class="timeline-item reveal"><div class="year">TODAY</div><h3>Current project delivery</h3><p>Continuing work across India and selected international projects, with a 24×7 service commitment.</p></div>
+ </div>
+</div>
+</section>
+
+<section style="padding-top:0">
+<div class="shell">
+ <div class="section-label">05 / Professional network</div>
+ <div class="clients reveal">
+  <div class="client">Larsen & Toubro</div><div class="client">BHEL</div><div class="client">G&W Electric</div><div class="client">3M</div>
+  <div class="client">Nepal Electricity Authority</div><div class="client">Nexans</div><div class="client">KEI Industries</div><div class="client">LS Cable</div>
+ </div>
+</div>
+</section>
+
+<section id="contact">
+<div class="shell">
+ <div class="contact-wrap reveal-scale">
+  <div>
+   <div class="section-label">06 / Contact</div><h2>Let's discuss the work.</h2>
+   <p>For project discussions, cable system requirements or specialised EHV support, connect directly with the DEV EHV Services team.</p>
+   <div class="contact-links">
+    <a class="contact-link" href="tel:07065382212"><small>Call</small><span>07065382212 ↗</span></a>
+    <a class="contact-link" href="tel:09891948556"><small>Call</small><span>09891948556 ↗</span></a>
+    <a class="contact-link" href="mailto:devehvservices@gmail.com"><small>Email</small><span>devehvservices@gmail.com ↗</span></a>
+   </div>
+  </div>
+  <form class="form" id="enquiryForm">
+   <label>Name</label><input id="name" name="name" required placeholder="Your name">
+   <label>Company</label><input id="company" name="company" placeholder="Company name"><label>Email</label><input id="email" name="email" type="email" placeholder="Your email"><label>Phone</label><input id="phone" name="phone" type="tel" placeholder="Phone number"><label>Service required</label><input id="service" name="service" placeholder="e.g. EHV cable jointing">
+   <label>Project requirement</label><textarea id="message" name="message" required placeholder="Tell us briefly about the project..."></textarea><div id="formStatus" role="status" style="min-height:20px;margin:-5px 0 16px;color:#d69a70"></div>
+   <button class="btn btn-primary" type="submit">Send enquiry ↗</button>
+  </form>
+ </div>
+</div>
+</section>
+
+<footer>
+  <div class="shell footer-brand">
+    <img src="dev-ehv-logo-transparent.png" alt="DEV EHV Services logo">
+  </div>
+  <div class="shell footer-row"><span>© DEV EHV SERVICES</span><span>EXTRA HIGH VOLTAGE CONTRACTING</span><span>DESIGNED FOR PRECISION</span></div>
+</footer>
+
+<script>
+document.querySelectorAll('.reveal').forEach(el=>new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show')}}),{threshold:.1}).observe(el));
+async function sendMail(e){e.preventDefault();const form=document.getElementById('enquiryForm'),status=document.getElementById('formStatus'),button=form.querySelector('button');status.textContent='Sending enquiry…';button.disabled=true;try{const payload=Object.fromEntries(new FormData(form));const r=await fetch('/api/enquiries',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});const d=await r.json();if(!r.ok)throw new Error(d.error||'Unable to send enquiry.');status.textContent='✓ '+d.message;form.reset()}catch(err){status.textContent='✕ '+err.message}finally{button.disabled=false}}
+document.getElementById('enquiryForm').addEventListener('submit',sendMail);
+</script>
+
+<script>
+window.addEventListener('load',()=>{
+  setTimeout(()=>document.getElementById('preloader')?.classList.add('hide'),450);
+});
+
+const nav=document.querySelector('.nav');
+window.addEventListener('scroll',()=>nav?.classList.toggle('scrolled',window.scrollY>30),{passive:true});
+
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+      io.unobserve(entry.target);
+    }
+  });
+},{threshold:.12,rootMargin:"0px 0px -30px"});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+document.querySelectorAll('.metric b').forEach(el=>{
+  const original=el.textContent.trim();
+  const match=original.match(/^(\d+)/);
+  if(!match)return;
+  const target=Number(match[1]);
+  const suffix=original.slice(match[1].length);
+  const counterObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting)return;
+      const start=performance.now(),duration=1150;
+      const tick=now=>{
+        const p=Math.min((now-start)/duration,1);
+        const eased=1-Math.pow(1-p,4);
+        el.innerHTML=Math.round(target*eased)+suffix.replace(/<[^>]*>/g,'');
+        if(p<1)requestAnimationFrame(tick);
+        else el.textContent=original;
+      };
+      requestAnimationFrame(tick);
+      counterObserver.unobserve(entry.target);
+    });
+  },{threshold:.7});
+  counterObserver.observe(el);
+});
+
+document.querySelectorAll('.project-card,.metric,.client').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    if(window.matchMedia('(pointer: coarse)').matches)return;
+    const r=card.getBoundingClientRect();
+    const x=(e.clientX-r.left)/r.width-.5;
+    const y=(e.clientY-r.top)/r.height-.5;
+    card.style.transform=`translateY(-8px) perspective(800px) rotateY(${x*2.5}deg) rotateX(${-y*2.5}deg)`;
+  });
+  card.addEventListener('mouseleave',()=>card.style.transform='');
+});
+</script>
+
+
+<script>
+/* Signature interaction layer */
+const glow=document.getElementById('cursorGlow');
+if(glow && !window.matchMedia('(pointer: coarse)').matches){
+  let gx=window.innerWidth/2,gy=window.innerHeight/2,cx=gx,cy=gy;
+  window.addEventListener('pointermove',e=>{gx=e.clientX;gy=e.clientY},{passive:true});
+  (function moveGlow(){
+    cx+=(gx-cx)*.12; cy+=(gy-cy)*.12;
+    glow.style.left=cx+'px'; glow.style.top=cy+'px';
+    requestAnimationFrame(moveGlow);
+  })();
+}
+
+const revealVariants=document.querySelectorAll('.reveal-left,.reveal-right,.reveal-scale');
+const variantObserver=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');variantObserver.unobserve(e.target)}})
+},{threshold:.12,rootMargin:'0px 0px -25px'});
+revealVariants.forEach(el=>variantObserver.observe(el));
+
+const timeline=document.querySelector('.timeline');
+if(timeline){
+ const tObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){timeline.classList.add('show-line');tObs.disconnect()}})
+ },{threshold:.2});
+ tObs.observe(timeline);
+}
+
+/* Gentle parallax only on desktop */
+if(!window.matchMedia('(pointer: coarse)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+ const hero=document.querySelector('.hero');
+ const heroVisual=document.querySelector('.hero .hero-content');
+ window.addEventListener('pointermove',e=>{
+   if(!hero || !heroVisual)return;
+   const r=hero.getBoundingClientRect();
+   if(e.clientY<r.bottom && e.clientY>r.top){
+     const x=(e.clientX/window.innerWidth-.5)*8;
+     const y=(e.clientY/window.innerHeight-.5)*6;
+     heroVisual.style.transform=`translate(${x}px,${y}px)`;
+   }
+ },{passive:true});
+ window.addEventListener('mouseleave',()=>{if(heroVisual)heroVisual.style.transform=''}, {passive:true});
+}
+
+/* Stagger visible project cards */
+document.querySelectorAll('.project-grid .project-card').forEach((card,i)=>{
+ card.style.transitionDelay=(i%3)*70+'ms';
+});
+
+/* Magnetic CTA */
+document.querySelectorAll('.btn').forEach(btn=>{
+ if(window.matchMedia('(pointer: coarse)').matches)return;
+ btn.addEventListener('mousemove',e=>{
+   const r=btn.getBoundingClientRect();
+   const x=(e.clientX-r.left-r.width/2)/r.width;
+   const y=(e.clientY-r.top-r.height/2)/r.height;
+   btn.style.transform=`translate(${x*5}px,${y*4}px) translateY(-2px)`;
+ });
+ btn.addEventListener('mouseleave',()=>btn.style.transform='');
+});
+</script>
+
+</body>
+</html>
